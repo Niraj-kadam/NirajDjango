@@ -23,6 +23,7 @@
         height: auto;
         margin-bottom: 1rem;
         border-radius: 20px;
+        border: 2px solid #cccccc;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
         transition: 0.3s;
     }
@@ -31,7 +32,7 @@
         width: 200px;
         height: 150px;
         object-fit: cover;
-        border-right: 2px solid #ababab; 
+        border-right: 2px solid #cccccc; 
     }
       
     .card-body {
@@ -48,6 +49,14 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
       }
           
+    .btn{
+        border-radius: 20px;
+    }
+
+    span{
+      font-weight: bold;
+    }
+
 </style>
 <body>
 
@@ -81,20 +90,21 @@
         </div>
       </nav>      
     
-
-    
       <div class="container mt-5 pt-5">
+        <h1>My Cart</h1>
         {% for i in cartitem %}
           <div class="card card-horizontal">
             <img src="{{ i.images.0 }}" class="img-fluid" alt="Card image">
             <div class="card-body">
               <h5 class="card-title">{{ i.title }}</h5>
+              <a href="#" class="btn btn-outline-success mt-auto" ><span>Place Order</span></a>
+              <a href="#" class="btn btn-outline-danger mt-auto"><span>Remove</span></a> 
             </div>
           </div>
-        {% endfor %}
-      </div>
-          
-  
+          {% endfor %}
+        </div>
+        
+        
 
 </body>
 </html>
