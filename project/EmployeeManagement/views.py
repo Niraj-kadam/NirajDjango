@@ -55,6 +55,15 @@ def addTocart(req,id):
    print(usercart)
    return redirect(f"/buy/{id}?addedtocart=true")
 
+def removeFromcart(req,id):
+   user = models.users.objects.get(id = userID)
+   usercart = json.loads(user.cart)
+   usercart.remove(id)
+   user.cart = usercart
+   user.save()  
+   print(usercart)
+   return redirect(f"/cart?removefromcart=true")
+
 def cartpage(req):
    user = models.users.objects.get(id = userID)
    usercart = json.loads(user.cart)

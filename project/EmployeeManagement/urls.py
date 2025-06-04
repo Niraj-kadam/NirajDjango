@@ -9,5 +9,6 @@ urlpatterns = [
     path('data',views.dataChange),
     path('buy/<int:id>',views.buyProduct),
     path('addToCart/<int:id>',views.addTocart),
+    path('removefromcart/<int:id>',views.removeFromcart),
     path('cart',views.cartpage)
 ]
