@@ -144,4 +144,11 @@
       el.innerHTML = starsHTML;
     });
   });
+
+  let url = document.location.href
+  let params = new URLSearchParams(url.split('?')[1])
+  let removefromcart = params.get('removefromcart')
+  if(removefromcart){
+    alert("Item is removed.")
+  }
 </script>
