@@ -15,14 +15,12 @@ def dataChange(req):
     return render(req,'data.html',context={'table':cartTable})
     
 def ecom(req):
-    response = requests.get('https://dummyjson.com/products',params={"limit":20})
-    data = response.json()
-    print(data)
+    shoes = models.Shoe.objects.all().values()
     #   brandList = []
     # for i in data['products']:
     #     if i['brand'] == 'Essence':
     #         brandList.append(i)
-    return render(req,'ecom.html',context={"productList":data['products']})
+    return render(req,'ecom.html',context={"productList":shoes})
 
 def deleteOrder(req,id):
     order = models.cart.objects.get(id=id)
