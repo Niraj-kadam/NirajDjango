@@ -39,10 +39,8 @@ def alterOrder(req,id):
         return render(req,"alter.html",context={"data":order})
     
 def buyProduct(req,id):
-    response = requests.get(f'https://dummyjson.com/products/{id}')
-    data = response.json()
-    print(data)
-    return render(req,"buy.html",context={"data":data})
+    shoes = models.Shoe.objects.all().values()
+    return render(req,"buy.html",context={"data":shoes})
 
 def addTocart(req,id):
    user = models.users.objects.get(id = userID)

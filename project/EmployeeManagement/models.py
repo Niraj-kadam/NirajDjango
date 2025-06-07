@@ -60,7 +60,8 @@ class Shoe(models.Model):
     stock = models.PositiveIntegerField()
     # available_sizes = models.ManyToManyField('ShoeSize')
     rating = models.FloatField(default=0.0)
-    image = models.ImageField(upload_to='shoes/')
+    # image = models.ImageField(upload_to='shoes/')
+    image = models.URLField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def discounted_price(self):
