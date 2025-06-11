@@ -14,4 +14,5 @@ urlpatterns = [
     path('addToWhish/<int:id>',views.addTowhish),
     path('whishlist',views.whishlist),
     path('removefromwhislist/<int:id>',views.removeFromWhislist),
+    path('',views.homepage)
 ]
