@@ -15,6 +15,7 @@ class users(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=100)
     cart = models.CharField(max_length=100,default='[]')
+    wishlist = models.CharField(max_length=100,default='[]')
     address  = models.CharField(max_length=500)
     orderhistory = models.CharField(max_length=1000,default='[]')
 
